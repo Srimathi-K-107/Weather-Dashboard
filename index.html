@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Weather App</title>
+
+    <!-- Remix Icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Weather</h1>
+        <div class="search-area">
+          <input type="text" id="search" placeholder="Enter city name" />
+          <button id="searchbtn">
+            <i class="ri-search-line"></i>
+            Search
+          </button>
+
+          <button id="currentlocationbtn">
+            <i class="ri-map-pin-line"></i>
+            Current Location
+          </button>
+        </div>
+      </header>
+
+      <!-- ================= MAIN ================= -->
+
+      <main>
+        <!-- LEFT SIDE -->
+        <aside>
+          <!-- CURRENT WEATHER -->
+
+          <div class="card current-card">
+            <p class="small-title">Now</p>
+
+            <h2 id="degreecelsius">--°C</h2>
+
+            <p id="haze">Loading...</p>
+
+            <hr />
+
+            <p>
+              <i class="ri-calendar-line"></i>
+              <span id="date">--</span>
+            </p>
+
+            <p>
+              <i class="ri-map-pin-line"></i>
+              <span id="location">--</span>
+            </p>
+          </div>
+
+          <!-- 5 DAYS FORECAST -->
+
+          <div class="card forecast-card">
+            <h2>5 Days Forecast</h2>
+
+            <div id="forecast"></div>
+          </div>
+        </aside>
+
+        <!-- RIGHT SIDE -->
+
+        <section class="content">
+          <h2 class="section-title">Today's Highlights</h2>
+
+          <!-- AIR QUALITY + SUNRISE -->
+
+          <div class="top-highlights">
+            <!-- AIR QUALITY -->
+
+            <div class="card air-card">
+              <div class="card-heading">
+                <span>Air Quality Index</span>
+
+                <span id="airstatus" class="badge"> -- </span>
+              </div>
+
+              <div class="air-grid">
+                <div>
+                  <i class="ri-windy-line big-icon"></i>
+                </div>
+
+                <div>
+                  <small>PM2.5</small>
+                  <strong id="pm25">--</strong>
+                </div>
+
+                <div>
+                  <small>PM10</small>
+                  <strong id="pm10">--</strong>
+                </div>
+
+                <div>
+                  <small>SO₂</small>
+                  <strong id="so2">--</strong>
+                </div>
+
+                <div>
+                  <small>CO</small>
+                  <strong id="co">--</strong>
+                </div>
+
+                <div>
+                  <small>NO</small>
+                  <strong id="no">--</strong>
+                </div>
+
+                <div>
+                  <small>NO₂</small>
+                  <strong id="no2">--</strong>
+                </div>
+
+                <div>
+                  <small>NH₃</small>
+                  <strong id="nh3">--</strong>
+                </div>
+
+                <div>
+                  <small>O₃</small>
+                  <strong id="o3">--</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- SUNRISE SUNSET -->
+
+            <div class="card sun-card">
+              <div class="card-heading">
+                <span>Sunrise & Sunset</span>
+              </div>
+
+              <div class="sun-content">
+                <div class="sun-item">
+                  <i class="ri-sun-line sun-icon"></i>
+
+                  <div>
+                    <small>Sunrise</small>
+                    <strong id="sunrise">--</strong>
+                  </div>
+                </div>
+
+                <div class="sun-item">
+                  <i class="ri-sun-foggy-line sun-icon"></i>
+
+                  <div>
+                    <small>Sunset</small>
+                    <strong id="sunset">--</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SMALL HIGHLIGHTS -->
+
+          <div class="small-highlights">
+            <!-- HUMIDITY -->
+
+            <div class="card highlight-card">
+              <p>Humidity</p>
+
+              <div>
+                <i class="ri-drop-line"></i>
+
+                <strong id="humidity"> --% </strong>
+              </div>
+            </div>
+
+            <!-- PRESSURE -->
+
+            <div class="card highlight-card">
+              <p>Pressure</p>
+
+              <div>
+                <i class="ri-compass-3-line"></i>
+
+                <strong id="pressure"> -- hPa </strong>
+              </div>
+            </div>
+
+            <!-- VISIBILITY -->
+
+            <div class="card highlight-card">
+              <p>Visibility</p>
+
+              <div>
+                <i class="ri-eye-line"></i>
+
+                <strong id="visibility"> -- km </strong>
+              </div>
+            </div>
+
+            <!-- WIND -->
+
+            <div class="card highlight-card">
+              <p>Wind Speed</p>
+
+              <div>
+                <i class="ri-navigation-line"></i>
+
+                <strong id="wind"> -- m/s </strong>
+              </div>
+            </div>
+
+            <!-- FEELS LIKE -->
+
+            <div class="card highlight-card">
+              <p>Feels Like</p>
+
+              <div>
+                <i class="ri-temp-hot-line"></i>
+
+                <strong id="feels"> --°C </strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- HOURLY -->
+
+          <h2 class="section-title">Today at</h2>
+
+          <div class="hourly-container" id="hourly"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
